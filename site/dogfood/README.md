@@ -17,7 +17,7 @@ tags:
   - agentic
   - structural-honesty
   - free-models
-pretty_name: "ultrawhale-dogfood — The Open Vaked Dogfeed Dataset"
+pretty_name: "ultrawhale-dogfood — the open vaked dogfeed dataset · the honest feed"
 size_categories:
   - n<1K
 configs:
@@ -32,3 +32,6 @@ configs:
 
 # see https://huggingface.co/datasets/PeetPedro/ultrawhale-dogfood for full dataset card
 # Auto-synced by hf-publish.yml CI
+
+# the honest feed — human↔LLM pairs that trained the sovereign quant.
+# structural honesty, from love, from within. prove it, don't assert it.
