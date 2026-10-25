@@ -1,5 +1,12 @@
 # 🐋 ultrawhale
 
+
+> **Part of the [8b.is AI training](https://8b.is/#training) family** — weights,
+> corpora and evaluations produced on hardware we own. Models live at
+> [huggingface.co/PeetPedro](https://huggingface.co/PeetPedro), the teaching surface at
+> [classroom.vaked.dev](https://classroom.vaked.dev), and the written record at
+> [pocoo.vaked.dev](https://pocoo.vaked.dev).
+
 <p align="center"><img src="site/logo.svg" width="100" alt="ultrawhale logo"></p>
 
 > <span style="color:#b44dff">⚡ CYBERPUNK THEME · ASCII-live demo coming soon ⚡</span>
@@ -7,7 +14,7 @@
 A coding agent that builds itself. **150 blocks. 7 recursions. 14 protocols.** v100.1.0.
 
 ```sh
-brew install peterlodri-sec/ultrawhale/ultrawhale
+brew install 8b-is/ultrawhale/ultrawhale
 ultrawhale --model deepseek-v4-flash -w
 ```
 
@@ -33,8 +40,8 @@ ultrawhale --model deepseek-v4-flash -w
 | Docs | [vaked.dev/ultrawhale/docs](https://vaked.dev/ultrawhale/docs) | ✅ 50+ pages |
 | Book | [vaked.dev/ultrawhale/book](https://vaked.dev/ultrawhale/book) | ✅ mdBook |
 | Blog | [vaked.dev/ultrawhale/blog](https://vaked.dev/ultrawhale/blog) | ✅ 2 posts |
-| HF Dataset | [peterlodri-sec/ultrawhale-dogfood](https://huggingface.co/datasets/peterlodri-sec/ultrawhale-dogfood) | ✅ 60 samples |
-| GitHub | [peterlodri-sec/ultrawhale](https://github.com/peterlodri-sec/ultrawhale) | ✅ |
+| HF Dataset | [8b-is/ultrawhale-dogfood](https://huggingface.co/datasets/8b-is/ultrawhale-dogfood) | ✅ 60 samples |
+| GitHub | [8b-is/ultrawhale](https://github.com/8b-is/ultrawhale) | ✅ |
 
 
 ## 🎯 v100→v200 Roadmap
@@ -53,13 +60,13 @@ ultrawhale --model deepseek-v4-flash -w
 ```
 
 
-[![v200](https://img.shields.io/badge/v200-THE%20SINGULARITY-ffaa00)](https://github.com/peterlodri-sec/ultrawhale/issues)
-[![Council](https://img.shields.io/badge/Council-20/20%20UNANIMOUS-00e660)](https://github.com/peterlodri-sec/ultrawhale/blob/main/docs/council-v200-verdict.md)
+[![v200](https://img.shields.io/badge/v200-THE%20SINGULARITY-ffaa00)](https://github.com/8b-is/ultrawhale/issues)
+[![Council](https://img.shields.io/badge/Council-20/20%20UNANIMOUS-00e660)](https://github.com/8b-is/ultrawhale/blob/main/docs/council-v200-verdict.md)
 
 Reactive Capability Graph → Self-Compiling → Global Mesh → Quantum-Resistant
 → Voice+AR → Formal Verification → Continuous Evolution → Global Datasets → Living Graph → 🎯
 
-[Master Tracking Issue](https://github.com/peterlodri-sec/ultrawhale/issues) · [Full Roadmap](https://github.com/peterlodri-sec/ultrawhale/blob/main/docs/council-v200-verdict.md)
+[Master Tracking Issue](https://github.com/8b-is/ultrawhale/issues) · [Full Roadmap](https://github.com/8b-is/ultrawhale/blob/main/docs/council-v200-verdict.md)
 
 ## 💰 June 2026 — $37.19 USD
 
@@ -97,13 +104,13 @@ ultrawhale --model deepseek-v4-flash -w
 
 ```sh
 # Homebrew
-brew install peterlodri-sec/ultrawhale/ultrawhale
+brew install 8b-is/ultrawhale/ultrawhale
 
 # Docker
-docker pull ghcr.io/peterlodri-sec/ultrawhale:latest
+docker pull ghcr.io/8b-is/ultrawhale:latest
 
 # Go install
-go install github.com/peterlodri-sec/ultrawhale/cmd/whale@latest
+go install github.com/8b-is/ultrawhale/cmd/whale@latest
 ```
 
 
@@ -135,7 +142,7 @@ ultrawhale has been audited for algorithmic complexity across all 59 blocks.
 
 ## 🤗 HuggingFace Pro + Dataset
 
-[![HF Dataset](https://img.shields.io/badge/🤗-ultrawhale--dogfood-ffaa00)](https://huggingface.co/datasets/peterlodri-sec/ultrawhale-dogfood)
+[![HF Dataset](https://img.shields.io/badge/🤗-ultrawhale--dogfood-ffaa00)](https://huggingface.co/datasets/8b-is/ultrawhale-dogfood)
 
 **Live dataset** of human↔LLM interactions. 60 samples, 20 CS topics, PII-scrubbed.
 SSH-authenticated CI auto-publish. [Dataset docs](docs/brain-to-dataset.md)
@@ -162,7 +169,7 @@ Dog Feed collects training data from free models.
 ## Quick Start
 
 ```sh
-git clone https://github.com/peterlodri-sec/ultrawhale.git
+git clone https://github.com/8b-is/ultrawhale.git
 cd ultrawhale
 go build -trimpath -ldflags="-s -w" -o bin/ultrawhale ./cmd/whale
 ./bin/ultrawhale --model deepseek-v4-flash -w
@@ -216,7 +223,7 @@ GOOS=linux GOARCH=amd64 GOAMD64=v3 go build -trimpath -ldflags="-s -w" -o bin/ul
 GOOS=darwin GOARCH=arm64 go build -trimpath -ldflags="-s -w" -o bin/ultrawhale-darwin-arm64 ./cmd/whale
 
 # With version injection
-go build -ldflags="-X github.com/peterlodri-sec/ultrawhale/internal/build.Version=v18.0.0" ./cmd/whale
+go build -ldflags="-X github.com/8b-is/ultrawhale/internal/build.Version=v18.0.0" ./cmd/whale
 ```
 
 
