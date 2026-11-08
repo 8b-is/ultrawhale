@@ -1,7 +1,7 @@
 name: hf-publish-dataset
 on:
   push:
-    paths: ['site/dogfood/*.jsonl', 'site/hf-dataset-card.md']
+    paths: ['site/dogfood/*.jsonl', 'site/hf-dataset-card.md', 'site/qwen4_exp_model/**', '.github/workflows/hf-publish.yml']
   schedule:
     - cron: '0 */6 * * *'  # every 6h — consolidate telemetry batches
   workflow_dispatch:
@@ -15,9 +15,50 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - name: Publish Qwen4-Exp Model & Voice-Finetuning RL Telemetry to HuggingFace
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install huggingface_hub --quiet
+          python3 - << 'PY'
+          import os
+          from pathlib import Path
+          from huggingface_hub import HfApi
+
+          token = os.environ["HF_TOKEN"]
+          api = HfApi(token=token)
+
+          # 1. Publish Model: PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra
+          model_repo = "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra"
+          api.create_repo(repo_id=model_repo, repo_type="model", private=False, exist_ok=True)
+          model_dir = Path(os.environ["GITHUB_WORKSPACE"]) / "site" / "qwen4_exp_model"
+          api.upload_folder(
+              repo_id=model_repo,
+              repo_type="model",
+              folder_path=str(model_dir),
+              commit_message="feat(qwen4_exp): publish Qwen4-Exp 8B obliterated-abliterated + wa-stream GRPO RL checkpoint",
+          )
+          print(f"Published model: https://huggingface.co/{model_repo}")
+
+          # 2. Publish RL Rollout Telemetry to Dataset: PeetPedro/voice-finetuning
+          voice_repo = "PeetPedro/voice-finetuning"
+          api.create_repo(repo_id=voice_repo, repo_type="dataset", private=False, exist_ok=True)
+          api.upload_file(
+              path_or_fileobj=str(model_dir / "qwen4_exp_wa_stream_rl_rollouts.jsonl"),
+              path_in_repo="data/qwen4_exp_wa_stream_rl_rollouts.jsonl",
+              repo_id=voice_repo,
+              repo_type="dataset",
+              commit_message="feat(rl): sync Qwen4-Exp x wa-stream 11-epoch GRPO RL rollouts",
+          )
+          api.upload_file(
+              path_or_fileobj=str(model_dir / "qwen4_exp_grpo_rl_policy.json"),
+              path_in_repo="state/qwen4_exp_grpo_rl_policy.json",
+              repo_id=voice_repo,
+              repo_type="dataset",
+              commit_message="feat(rl): sync Qwen4-Exp x wa-stream GRPO RL policy state",
+          )
+          print(f"Synced dataset: https://huggingface.co/datasets/{voice_repo}")
+          PY
 
       - name: Push dogfeed + consolidate telemetry
         env:

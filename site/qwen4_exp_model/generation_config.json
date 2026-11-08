@@ -1,0 +1,12 @@
+{
+  "bos_token_id": 151643,
+  "eos_token_id": [151645, 151643],
+  "pad_token_id": 151643,
+  "cache_implementation": "dynamic",
+  "do_sample": true,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "max_length": 32768,
+  "transformers_version": "4.52.0.dev0"
+}

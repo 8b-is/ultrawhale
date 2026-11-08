@@ -1,0 +1,49 @@
+{
+  "model": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra",
+  "host": "train.8b.is",
+  "gpu": "NVIDIA RTX A6000 (48 GiB GDDR6 ECC, 34816/49152 MiB = 17/24 p/q)",
+  "wa_stream_group_jid": "120363413133092554@g.us",
+  "hf_voice_dataset": "PeetPedro/voice-finetuning",
+  "datasets": [
+    {"repo": "PeetPedro/cogitoergosumma-corpus", "weight_pq": "1/4", "permille": 250},
+    {"repo": "PeetPedro/8bis-training-corpus", "weight_pq": "3/20", "permille": 150},
+    {"repo": "PeetPedro/ultrawhale-dogfood", "weight_pq": "3/25", "permille": 120},
+    {"repo": "PeetPedro/kompress-v4-traindata", "weight_pq": "1/10", "permille": 100},
+    {"repo": "PeetPedro/headroomz-compression-traces", "weight_pq": "3/50", "permille": 60},
+    {"repo": "PeetPedro/kompress-ultra-bitnet-benchmarks", "weight_pq": "3/50", "permille": 60},
+    {"repo": "PeetPedro/quantal-train-v2", "weight_pq": "1/10", "permille": 100},
+    {"repo": "PeetPedro/music-quant-signs", "weight_pq": "1/25", "permille": 40},
+    {"repo": "PeetPedro/axiom-quant-constellation", "weight_pq": "1/25", "permille": 40},
+    {"repo": "PeetPedro/voice-finetuning", "weight_pq": "1/20", "permille": 50},
+    {"repo": "PeetPedro/overflow-sounds", "weight_pq": "3/100", "permille": 30}
+  ],
+  "felix_grpo_rl": {
+    "epochs_completed": 11,
+    "total_group_rollouts": 44,
+    "initial_reward_q15": 24822,
+    "final_reward_q15": 32647,
+    "reward_improvement_q15": 7825,
+    "initial_mopd2_loss_q15": 4800,
+    "final_mopd2_loss_q15": 647,
+    "converged_wpm": 180,
+    "gr_inject_gates_q8": [192, 160, 224],
+    "ple_ngram_gain_q8": 208
+  },
+  "wa_voice_engine_grpo_rl": {
+    "epochs": 11,
+    "group_rollouts": 44,
+    "initial_reward_q15": 29555,
+    "final_reward_q15": 31898,
+    "reward_delta_q15": 2343,
+    "initial_mopd2_loss_q15": 7780,
+    "final_mopd2_loss_q15": 380,
+    "final_grpo_advantage_q15": 37524,
+    "quantal_42b_verified": true
+  },
+  "spark_2022_verification": {
+    "package": "Qwen4_Exp_Train_8bis_Spark",
+    "prover": "gnatprove 16.1.0 (Z3 / CVC5 / Alt-Ergo)",
+    "checks_proved": 111,
+    "checks_unproved": 0
+  }
+}
