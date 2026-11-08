@@ -133,4 +133,7 @@ jobs:
 
           git add -A
           git diff --cached --quiet || git commit -m "auto: dogfeed=${DOGFEED_SAMPLES} telemetry=${TELEMETRY_EVENTS} [${TIMESTAMP}]"
-          git push origin main
+          for attempt in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin main && break
+            sleep 2
+          done
