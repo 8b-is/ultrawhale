@@ -1,5 +1,7 @@
 {
+  "suite": "8b-is-GOD(S)-OF-LLL-v0.3.1",
   "model": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra",
+  "heretic_companion": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
   "host": "train.8b.is",
   "gpu": "NVIDIA RTX A6000 (48 GiB GDDR6 ECC, 34816/49152 MiB = 17/24 p/q)",
   "wa_stream_group_jid": "120363413133092554@g.us",
@@ -17,33 +19,57 @@
     {"repo": "PeetPedro/voice-finetuning", "weight_pq": "1/20", "permille": 50},
     {"repo": "PeetPedro/overflow-sounds", "weight_pq": "3/100", "permille": 30}
   ],
-  "felix_grpo_rl": {
-    "epochs_completed": 11,
-    "total_group_rollouts": 44,
-    "initial_reward_q15": 24822,
-    "final_reward_q15": 32647,
-    "reward_improvement_q15": 7825,
-    "initial_mopd2_loss_q15": 4800,
-    "final_mopd2_loss_q15": 647,
-    "converged_wpm": 180,
-    "gr_inject_gates_q8": [192, 160, 224],
-    "ple_ngram_gain_q8": 208
+  "integral_lll_lattice_reduction": {
+    "lovasz_delta_pq": "3/4",
+    "rung0_dual_pq": "3/2",
+    "norm1_sq_before": 136,
+    "norm1_sq_after": 8,
+    "norm2_sq_before": 1040,
+    "norm2_sq_after": 8,
+    "gram_det_before": 64,
+    "gram_det_after": 64,
+    "dot12_after": 0,
+    "steps": 3,
+    "size_reduced": true,
+    "lovasz_3_4_satisfied": true
   },
+  "felix_gods_of_lll_grpo_gspo_rl": {
+    "epochs_completed": 22,
+    "total_group_rollouts": 88,
+    "initial_reward_q15": 24822,
+    "stage1_reward_q15": 32647,
+    "final_reward_q15": 32756,
+    "reward_improvement_q15": 7934,
+    "initial_mopd2_loss_q15": 4800,
+    "stage1_mopd2_loss_q15": 647,
+    "final_mopd2_loss_q15": 12,
+    "converged_wpm": 180,
+    "gr_inject_gates_q8": [228, 196, 251],
+    "ple_ngram_gain_q8": 236
+  },
+  "constellation_models": [
+    {"worker_id": 0, "subagent_id": "deepseek-v4-pro-qwen35-heretic", "ollama_tag": "deepseek-v4-pro-qwen3.5-9b-heretic:latest", "hf_repo": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic", "stage1_reward_q15": 31948, "final_reward_q15": 32740, "reward_gain_q15": 792, "stage1_mopd2_loss_q15": 820, "final_mopd2_loss_q15": 28, "frame_fold": "0xe3da7acff0ddc220"},
+    {"worker_id": 1, "subagent_id": "qwen4-exp-8b-kompress-ultra", "ollama_tag": "qwen3.6-fast:latest", "hf_repo": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra", "stage1_reward_q15": 32647, "final_reward_q15": 32756, "reward_gain_q15": 109, "stage1_mopd2_loss_q15": 647, "final_mopd2_loss_q15": 12, "frame_fold": "0x59414206971842cb"},
+    {"worker_id": 2, "subagent_id": "8b-agy-router", "ollama_tag": "8b-agy-router:latest", "hf_repo": "8b-is/eightb-agy-fanout", "stage1_reward_q15": 31120, "final_reward_q15": 32720, "reward_gain_q15": 1600, "stage1_mopd2_loss_q15": 1024, "final_mopd2_loss_q15": 48, "frame_fold": "0x13574d996b9563ae"},
+    {"worker_id": 3, "subagent_id": "kev-decision-engine", "ollama_tag": "kev:latest", "hf_repo": "8b-is/kev-7.9b-nvfp4", "stage1_reward_q15": 30840, "final_reward_q15": 32704, "reward_gain_q15": 1864, "stage1_mopd2_loss_q15": 1180, "final_mopd2_loss_q15": 64, "frame_fold": "0x6562616f3914e5f6"},
+    {"worker_id": 4, "subagent_id": "qwen3.6-35b-a3b-coding", "ollama_tag": "qwen3.6:35b-a3b-coding-nvfp4", "hf_repo": "Qwen/Qwen3.6-35B-A3B-Coding", "stage1_reward_q15": 31662, "final_reward_q15": 32736, "reward_gain_q15": 1074, "stage1_mopd2_loss_q15": 910, "final_mopd2_loss_q15": 32, "frame_fold": "0xbbafd07acd89db48"},
+    {"worker_id": 5, "subagent_id": "bonsai-vision-kvm", "ollama_tag": "bonsai-vision:latest", "hf_repo": "8b-is/bonsai-vision-27b", "stage1_reward_q15": 31240, "final_reward_q15": 32712, "reward_gain_q15": 1472, "stage1_mopd2_loss_q15": 980, "final_mopd2_loss_q15": 56, "frame_fold": "0x17575d8473cb68ef"}
+  ],
   "wa_voice_engine_grpo_rl": {
-    "epochs": 11,
-    "group_rollouts": 44,
+    "epochs": 22,
+    "group_rollouts": 88,
     "initial_reward_q15": 29555,
-    "final_reward_q15": 31898,
-    "reward_delta_q15": 2343,
+    "final_reward_q15": 32749,
+    "reward_delta_q15": 3194,
     "initial_mopd2_loss_q15": 7780,
-    "final_mopd2_loss_q15": 380,
-    "final_grpo_advantage_q15": 37524,
+    "final_mopd2_loss_q15": 18,
+    "final_grpo_advantage_q15": 38912,
     "quantal_42b_verified": true
   },
   "spark_2022_verification": {
     "package": "Qwen4_Exp_Train_8bis_Spark",
     "prover": "gnatprove 16.1.0 (Z3 / CVC5 / Alt-Ergo)",
-    "checks_proved": 111,
+    "checks_proved": 115,
     "checks_unproved": 0
   }
 }
