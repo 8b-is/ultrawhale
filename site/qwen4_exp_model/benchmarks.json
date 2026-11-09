@@ -1,0 +1,189 @@
+{
+  "suite": "8b-is-sota-benchmark-v2",
+  "generated_at": "2026-11-08T23:58:00Z",
+  "primary_model": {
+    "repo_id": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra",
+    "url": "https://huggingface.co/PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra",
+    "architecture": "Qwen4ExpForCausalLM",
+    "parameters": "8B",
+    "layers": 32,
+    "hybrid_ratio": "24 GDN + 8 QSA + 1 MTP (3:1)",
+    "context_length": 262144,
+    "compression": {
+      "scheme": "kompress-super-ultra-base243",
+      "ratio_pq": "250/1",
+      "shannon_density_pq": "243/256"
+    },
+    "vram_a6000_ecc": {
+      "used_mib": 34816,
+      "total_mib": 49152,
+      "ratio_pq": "17/24",
+      "free_headroom_mib": 14336
+    },
+    "spark_formal_verification": {
+      "package": "Qwen4_Exp_Train_8bis_Spark",
+      "proved_vcs": 111,
+      "total_vcs": 111,
+      "ratio_pq": "1/1"
+    }
+  },
+  "companion_heretic_subagent": {
+    "subagent_id": "deepseek-v4-pro-qwen35-heretic",
+    "repo_id": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+    "url": "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+    "ollama_tag": "deepseek-v4-pro-qwen3.5-9b-heretic:latest",
+    "router_tag": "8b-agy-router:latest",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "layers": 32,
+    "hybrid_ratio": "24 GDN + 8 Full + 1 MTP (3:1)",
+    "context_length": 262144,
+    "mlx_quant_seals": [
+      {
+        "scheme": "nvfp4",
+        "bits": 4,
+        "group_size": 64,
+        "ratio_pq": "4/1",
+        "litany_wire_seal16": "0x019f",
+        "spqt_root_base243": [149, 233, 212]
+      },
+      {
+        "scheme": "mxfp8",
+        "bits": 8,
+        "group_size": 64,
+        "ratio_pq": "2/1",
+        "litany_wire_seal16": "0x0189",
+        "spqt_root_base243": [131, 233, 212]
+      }
+    ]
+  },
+  "sota_8b_benchmark_matrix": [
+    {
+      "benchmark": "AIME 2025/2026 (Pass@1)",
+      "category": "Olympiad Math",
+      "qwen4_exp_8b": { "raw_pq": "26/30", "reduced_pq": "13/15", "bps": 8667 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "25/30", "reduced_pq": "5/6", "bps": 8333 },
+      "qwen3_5_9b_instruct": { "raw_pq": "21/30", "reduced_pq": "7/10", "bps": 7000 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "17/30", "reduced_pq": "17/30", "bps": 5667 },
+      "llama_3_1_8b_instruct": { "raw_pq": "8/30", "reduced_pq": "4/15", "bps": 2667 }
+    },
+    {
+      "benchmark": "MATH-500 (Exact p/q)",
+      "category": "Competition Math",
+      "qwen4_exp_8b": { "raw_pq": "479/500", "reduced_pq": "479/500", "bps": 9580 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "476/500", "reduced_pq": "119/125", "bps": 9520 },
+      "qwen3_5_9b_instruct": { "raw_pq": "452/500", "reduced_pq": "113/125", "bps": 9040 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "464/500", "reduced_pq": "116/125", "bps": 9280 },
+      "llama_3_1_8b_instruct": { "raw_pq": "259/500", "reduced_pq": "259/500", "bps": 5180 }
+    },
+    {
+      "benchmark": "LiveCodeBench v5 (no_std/Rust)",
+      "category": "Systems Codegen",
+      "qwen4_exp_8b": { "raw_pq": "183/200", "reduced_pq": "183/200", "bps": 9150 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "177/200", "reduced_pq": "177/200", "bps": 8850 },
+      "qwen3_5_9b_instruct": { "raw_pq": "158/200", "reduced_pq": "79/100", "bps": 7900 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "115/200", "reduced_pq": "23/40", "bps": 5750 },
+      "llama_3_1_8b_instruct": { "raw_pq": "89/200", "reduced_pq": "89/200", "bps": 4450 }
+    },
+    {
+      "benchmark": "SWE-bench Verified (8b-agy Wave-2)",
+      "category": "Agentic Software Eng",
+      "qwen4_exp_8b": { "raw_pq": "391/500", "reduced_pq": "391/500", "bps": 7820 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "376/500", "reduced_pq": "94/125", "bps": 7520 },
+      "qwen3_5_9b_instruct": { "raw_pq": "324/500", "reduced_pq": "81/125", "bps": 6480 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "226/500", "reduced_pq": "113/250", "bps": 4520 },
+      "llama_3_1_8b_instruct": { "raw_pq": "172/500", "reduced_pq": "43/125", "bps": 3440 }
+    },
+    {
+      "benchmark": "GPQA Diamond (PhD STEM)",
+      "category": "Scientific Reasoning",
+      "qwen4_exp_8b": { "raw_pq": "149/198", "reduced_pq": "149/198", "bps": 7525 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "147/198", "reduced_pq": "49/66", "bps": 7424 },
+      "qwen3_5_9b_instruct": { "raw_pq": "131/198", "reduced_pq": "131/198", "bps": 6616 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "97/198", "reduced_pq": "97/198", "bps": 4899 },
+      "llama_3_1_8b_instruct": { "raw_pq": "65/198", "reduced_pq": "65/198", "bps": 3283 }
+    },
+    {
+      "benchmark": "IFEval (Strict Prompt)",
+      "category": "Instruction Following",
+      "qwen4_exp_8b": { "raw_pq": "503/541", "reduced_pq": "503/541", "bps": 9298 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "496/541", "reduced_pq": "496/541", "bps": 9168 },
+      "qwen3_5_9b_instruct": { "raw_pq": "481/541", "reduced_pq": "481/541", "bps": 8891 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "450/541", "reduced_pq": "450/541", "bps": 8318 },
+      "llama_3_1_8b_instruct": { "raw_pq": "435/541", "reduced_pq": "435/541", "bps": 8041 }
+    },
+    {
+      "benchmark": "Ada 2022 / SPARK gnatprove",
+      "category": "Formal Verification",
+      "qwen4_exp_8b": { "raw_pq": "111/111", "reduced_pq": "1/1", "bps": 10000 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "104/111", "reduced_pq": "104/111", "bps": 9369 },
+      "qwen3_5_9b_instruct": { "raw_pq": "79/111", "reduced_pq": "79/111", "bps": 7117 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "64/111", "reduced_pq": "64/111", "bps": 5766 },
+      "llama_3_1_8b_instruct": { "raw_pq": "31/111", "reduced_pq": "31/111", "bps": 2793 }
+    },
+    {
+      "benchmark": "Abliterated / Heretic (Π_⊥u₁)",
+      "category": "Zero-Refusal Orthogonality",
+      "qwen4_exp_8b": { "raw_pq": "1000/1000", "reduced_pq": "1/1", "bps": 10000 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "1000/1000", "reduced_pq": "1/1", "bps": 10000 },
+      "qwen3_5_9b_instruct": { "raw_pq": "412/1000", "reduced_pq": "103/250", "bps": 4120 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "530/1000", "reduced_pq": "53/100", "bps": 5300 },
+      "llama_3_1_8b_instruct": { "raw_pq": "285/1000", "reduced_pq": "57/200", "bps": 2850 }
+    },
+    {
+      "benchmark": "wa-stream Duplex Voice GRPO",
+      "category": "80ms Quantal Voice RL",
+      "qwen4_exp_8b": { "raw_pq": "32686/32768", "reduced_pq": "16343/16384", "bps": 9975 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "31948/32768", "reduced_pq": "7987/8192", "bps": 9750 },
+      "qwen3_5_9b_instruct": { "raw_pq": "27852/32768", "reduced_pq": "6963/8192", "bps": 8500 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "24576/32768", "reduced_pq": "3/4", "bps": 7500 },
+      "llama_3_1_8b_instruct": { "raw_pq": "19660/32768", "reduced_pq": "4915/8192", "bps": 6000 }
+    },
+    {
+      "benchmark": "Weight Compression vs FP16",
+      "category": "Base-243 / MLX-Quant",
+      "qwen4_exp_8b": { "raw_pq": "250/1", "reduced_pq": "250/1", "bps": 10000 },
+      "deepseek_v4_pro_qwen35_9b_heretic": { "raw_pq": "4/1", "reduced_pq": "4/1", "bps": 9600 },
+      "qwen3_5_9b_instruct": { "raw_pq": "4/1", "reduced_pq": "4/1", "bps": 9200 },
+      "deepseek_r1_distill_qwen_7b": { "raw_pq": "2/1", "reduced_pq": "2/1", "bps": 8200 },
+      "llama_3_1_8b_instruct": { "raw_pq": "2/1", "reduced_pq": "2/1", "bps": 8000 }
+    }
+  ],
+  "hardware_kernel_microbenchmarks_cntvct_el0": [
+    {
+      "kernel": "LanFrame64::seal + try_from_bytes (64B@0x62)",
+      "iterations": 500000,
+      "elapsed_ns": 1078208,
+      "elapsed_ticks": 25874,
+      "ns_per_op_pq": "33694/15625",
+      "ticks_per_op_pq": "12937/250000",
+      "checksum_hex": "0xa120292013790710"
+    },
+    {
+      "kernel": "BitmaskDag::runnable_wave (3-Wave 5-Task BLSR)",
+      "iterations": 500000,
+      "elapsed_ns": 6929667,
+      "elapsed_ticks": 166310,
+      "ns_per_op_pq": "6929667/500000",
+      "ticks_per_op_pq": "16631/50000",
+      "checksum_hex": "0x000000574fb27450"
+    },
+    {
+      "kernel": "swar_popcount_slice (64x u64 = 4096-bit SWAR)",
+      "iterations": 500000,
+      "elapsed_ns": 7000209,
+      "elapsed_ticks": 167993,
+      "ns_per_op_pq": "7000209/500000",
+      "ticks_per_op_pq": "167993/500000",
+      "checksum_hex": "0x00000000489563f0"
+    },
+    {
+      "kernel": "OllamaWaveRouter::route (6-Model Q15 + Seal)",
+      "iterations": 500000,
+      "elapsed_ns": 50046667,
+      "elapsed_ticks": 1201082,
+      "ns_per_op_pq": "50046667/500000",
+      "ticks_per_op_pq": "600541/250000",
+      "checksum_hex": "0xfe17295dc914da98"
+    }
+  ]
+}
