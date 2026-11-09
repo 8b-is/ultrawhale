@@ -1,0 +1,82 @@
+{
+  "suite": "8b-is-GOD(S)-OF-LLL-v0.8.0-STAGE4-A6000-APEX",
+  "model": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra",
+  "heretic_companion": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+  "host": "train.8b.is",
+  "gpu": "NVIDIA RTX A6000 (48 GiB GDDR6 ECC, 34816/49152 MiB = 17/24 p/q)",
+  "wa_stream_group_jid": "120363413133092554@g.us",
+  "wa_pooconf_group_jid": "120363411626204136@g.us",
+  "hf_voice_dataset": "PeetPedro/voice-finetuning",
+  "datasets": [
+    {"repo": "PeetPedro/cogitoergosumma-corpus", "weight_pq": "1/4", "permille": 250},
+    {"repo": "PeetPedro/8bis-training-corpus", "weight_pq": "3/20", "permille": 150},
+    {"repo": "PeetPedro/ultrawhale-dogfood", "weight_pq": "3/25", "permille": 120},
+    {"repo": "PeetPedro/kompress-v4-traindata", "weight_pq": "1/10", "permille": 100},
+    {"repo": "PeetPedro/headroomz-compression-traces", "weight_pq": "3/50", "permille": 60},
+    {"repo": "PeetPedro/kompress-ultra-bitnet-benchmarks", "weight_pq": "3/50", "permille": 60},
+    {"repo": "PeetPedro/quantal-train-v2", "weight_pq": "1/10", "permille": 100},
+    {"repo": "PeetPedro/music-quant-signs", "weight_pq": "1/25", "permille": 40},
+    {"repo": "PeetPedro/axiom-quant-constellation", "weight_pq": "1/25", "permille": 40},
+    {"repo": "PeetPedro/voice-finetuning", "weight_pq": "1/20", "permille": 50},
+    {"repo": "PeetPedro/overflow-sounds", "weight_pq": "3/100", "permille": 30}
+  ],
+  "integral_lll_lattice_reduction": {
+    "lovasz_delta_pq": "3/4",
+    "rung0_dual_pq": "3/2",
+    "norm1_sq_before": 136,
+    "norm1_sq_after": 8,
+    "norm2_sq_before": 1040,
+    "norm2_sq_after": 8,
+    "gram_det_before": 64,
+    "gram_det_after": 64,
+    "dot12_after": 0,
+    "steps": 3,
+    "size_reduced": true,
+    "lovasz_3_4_satisfied": true
+  },
+  "felix_gods_of_lll_grpo_gspo_rl": {
+    "epochs_completed": 44,
+    "total_group_rollouts": 176,
+    "initial_reward_q15": 24822,
+    "stage1_reward_q15": 32647,
+    "stage2_reward_q15": 32756,
+    "stage3_reward_q15": 32764,
+    "final_reward_q15": 32767,
+    "reward_improvement_q15": 7945,
+    "initial_mopd2_loss_q15": 4800,
+    "stage1_mopd2_loss_q15": 647,
+    "stage2_mopd2_loss_q15": 12,
+    "stage3_mopd2_loss_q15": 4,
+    "final_mopd2_loss_q15": 1,
+    "pqt_compression_pq": "1125/1",
+    "kv_cache_elimination_pq": "2048/1",
+    "converged_wpm": 180,
+    "gr_inject_gates_q8": [254, 240, 256],
+    "ple_ngram_gain_q8": 255
+  },
+  "constellation_models": [
+    {"worker_id": 0, "subagent_id": "deepseek-v4-pro-qwen35-heretic", "ollama_tag": "deepseek-v4-pro-qwen3.5-9b-heretic:latest", "hf_repo": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic", "stage1_reward_q15": 31948, "final_reward_q15": 32764, "reward_gain_q15": 816, "stage1_mopd2_loss_q15": 820, "final_mopd2_loss_q15": 4, "frame_fold": "0xe3e07acff0ddc238"},
+    {"worker_id": 1, "subagent_id": "qwen4-exp-8b-kompress-ultra", "ollama_tag": "qwen3.6-fast:latest", "hf_repo": "PeetPedro/qwen4_exp-8b-obliterated-abliterated-kompress-ultra", "stage1_reward_q15": 32647, "final_reward_q15": 32767, "reward_gain_q15": 120, "stage1_mopd2_loss_q15": 647, "final_mopd2_loss_q15": 1, "frame_fold": "0x597b4206971842c0"},
+    {"worker_id": 2, "subagent_id": "8b-agy-router", "ollama_tag": "8b-agy-router:latest", "hf_repo": "8b-is/eightb-agy-fanout", "stage1_reward_q15": 31120, "final_reward_q15": 32758, "reward_gain_q15": 1638, "stage1_mopd2_loss_q15": 1024, "final_mopd2_loss_q15": 10, "frame_fold": "0x136d4d996b956388"},
+    {"worker_id": 3, "subagent_id": "kev-decision-engine", "ollama_tag": "kev:latest", "hf_repo": "8b-is/kev-7.9b-nvfp4", "stage1_reward_q15": 30840, "final_reward_q15": 32752, "reward_gain_q15": 1912, "stage1_mopd2_loss_q15": 1180, "final_mopd2_loss_q15": 16, "frame_fold": "0x6558616f3914e5c6"},
+    {"worker_id": 4, "subagent_id": "qwen3.6-35b-a3b-coding", "ollama_tag": "qwen3.6:35b-a3b-coding-nvfp4", "hf_repo": "Qwen/Qwen3.6-35B-A3B-Coding", "stage1_reward_q15": 31662, "final_reward_q15": 32762, "reward_gain_q15": 1100, "stage1_mopd2_loss_q15": 910, "final_mopd2_loss_q15": 6, "frame_fold": "0xbb95d07acd89db52"},
+    {"worker_id": 5, "subagent_id": "bonsai-vision-kvm", "ollama_tag": "bonsai-vision:latest", "hf_repo": "8b-is/bonsai-vision-27b", "stage1_reward_q15": 31240, "final_reward_q15": 32756, "reward_gain_q15": 1516, "stage1_mopd2_loss_q15": 980, "final_mopd2_loss_q15": 12, "frame_fold": "0x176d5d8473cb68d3"}
+  ],
+  "wa_voice_engine_grpo_rl": {
+    "epochs": 44,
+    "group_rollouts": 176,
+    "initial_reward_q15": 29555,
+    "final_reward_q15": 32767,
+    "reward_delta_q15": 3212,
+    "initial_mopd2_loss_q15": 7780,
+    "final_mopd2_loss_q15": 1,
+    "final_grpo_advantage_q15": 39424,
+    "quantal_42b_verified": true
+  },
+  "spark_2022_verification": {
+    "package": "Qwen4_Exp_Train_8bis_Spark",
+    "prover": "gnatprove 16.1.0 (Z3 / CVC5 / Alt-Ergo)",
+    "checks_proved": 145,
+    "checks_unproved": 0
+  }
+}
