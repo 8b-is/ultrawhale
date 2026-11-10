@@ -95,3 +95,11 @@ secrets/
 hugo-site/public/
 hugo-site/.hugo_build.lock
 .superpowers/
+
+# Smart Tree & MEM|8 consciousness indices
+.m8
+**/.m8
+*.m8
+.mrm8
+**/.mrm8
+*.mrm8
